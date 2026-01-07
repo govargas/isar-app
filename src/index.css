@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ===== ISAR Design System ===== */
+/* Nordic Noir meets High-Tech */
+
+@theme {
+  /* Background Colors */
+  --color-bg-deep: #0A0E14;
+  --color-bg-surface: #121820;
+  --color-bg-elevated: #1A2330;
+  
+  /* Ice Blue Spectrum */
+  --color-ice-primary: #00D4FF;
+  --color-ice-glow: #00A3CC;
+  --color-ice-dark: #006B99;
+  
+  /* Text Colors */
+  --color-frost-white: #E8F4F8;
+  --color-frost-muted: #8899A6;
+  --color-frost-dim: #5C6B77;
+  
+  /* Status Colors */
+  --color-safe: #00E676;
+  --color-safe-glow: #00C853;
+  --color-uncertain: #FFAA00;
+  --color-uncertain-glow: #FF9100;
+  --color-warning: #FF4757;
+  --color-warning-glow: #FF1744;
+  --color-no-ice: #9E9E9E;
+  
+  /* Shadows & Glows */
+  --shadow-glow-ice: 0 0 20px rgba(0, 212, 255, 0.3);
+  --shadow-glow-safe: 0 0 20px rgba(0, 230, 118, 0.3);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+  
+  /* Typography */
+  --font-display: 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Spacing */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+/* Base Styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--color-bg-deep);
+  color: var(--color-frost-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-frost-dim);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-frost-muted);
+}
+
+/* MapLibre overrides */
+.maplibregl-ctrl-attrib {
+  background: var(--color-bg-surface) !important;
+  color: var(--color-frost-muted) !important;
+  font-size: 10px !important;
+}
+
+.maplibregl-ctrl-attrib a {
+  color: var(--color-ice-primary) !important;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(18, 24, 32, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+/* Utility classes */
+.text-gradient-ice {
+  background: linear-gradient(135deg, var(--color-ice-primary), var(--color-ice-glow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
