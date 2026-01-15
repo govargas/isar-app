@@ -20,3 +20,4 @@ SELECT cron.schedule(
 -- Verify
 SELECT * FROM cron.job;
 
+

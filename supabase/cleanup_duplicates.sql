@@ -24,3 +24,4 @@ FROM ice_reports ir
 JOIN lakes l ON ir.lake_id = l.id
 ORDER BY ir.scraped_at DESC;
 
+

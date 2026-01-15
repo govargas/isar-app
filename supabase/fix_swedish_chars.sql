@@ -30,3 +30,4 @@ UPDATE lakes SET slug = 'tyreso-flaten' WHERE name = 'Tyresö-Flaten';
 -- Verify the changes
 SELECT name, slug, region FROM lakes ORDER BY name;
 
+

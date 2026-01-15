@@ -245,4 +245,3 @@ export async function getLakesWithStaleRevalidate(
   
   return lakes;
 }
-

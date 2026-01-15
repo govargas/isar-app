@@ -38,3 +38,4 @@ UPDATE lakes SET region = 'Tyresö' WHERE region LIKE 'Tyre%' AND region LIKE '%
 -- Verify the changes
 SELECT id, name, slug, region FROM lakes ORDER BY name;
 
+

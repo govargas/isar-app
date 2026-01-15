@@ -26,3 +26,4 @@ UPDATE lakes SET region = 'Ekerö' WHERE LOWER(region) LIKE 'eker%';
 -- Verify
 SELECT name, slug, region FROM lakes ORDER BY name;
 
+
